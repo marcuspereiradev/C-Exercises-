@@ -2,47 +2,48 @@
 
 int main(){
     
-    double num1;
-    double num2;
-    int operador;
- 
-   while("true"){
-        
-    printf("Informe o operador aritimético! \n");
-    printf("1 para somar - 2 para subtrair - 3 para dividir - 4 para multiplicar. \n\n");
-    scanf("%d", &operador);
-        
-        if(operador <= 0 || operador > 4){
-            printf("%d é um operador aritimético inválido!\n\n", operador);
-            continue;
-        }
+    float num1, num2, resultado;
+    char op;
+    char sair = 'c';
 
-    printf("Informe o primeiro número: \n");
-    scanf("%lf", &num1);
-   
-    printf("Informe o segundo número: \n");
-    scanf("%lf", &num2);
+    while(sair == 'c'){
+        printf("\n\nPrimeiro Nº = ");
+        scanf("%f", &num1);
+
+        printf("\nOperador Aritimético = ");
+        scanf("%s", &op);
+
+        printf("\nSegundo Nº = ");
+        scanf("%f", &num2);
+
+        switch(op){
+            case '+':
+                resultado = num1 + num2;
+                printf("\n\n %.2f + %.2f = %.2f \n\n", num1, num2, resultado);
+                break;
+
+            case '-':
+                resultado = num1 - num2;
+                printf("\n\n %.2f - %.2f = %.2f \n\n", num1, num2, resultado);
+                break;
+
+            case '*':
+                resultado = num1 * num2;
+                printf("\n\n %.2f x %.2f = %.2f \n\n", num1, num2, resultado);
+                break;
+
+            case '/':
+                resultado = num1 / num2;
+                printf("\n\n %.2f / %.2f = %.2f \n\n", num1, num2, resultado);
+                break;
+
+            default:
+                printf("\n\n Operador Inválido! Operadores válidos são (+, -, /, *) \n\n");
+                break;
+                 
+        }
         
-        if(operador == 1){
-            double soma = num1 + num2;
-            printf("A soma é %.1f\n\n", soma);
-            break;
-        }
-        if(operador == 2){
-            double subt = num1 - num2;
-            printf("A subtração é %.1f\n\n", subt);
-            break;
-        }
-        if(operador == 3){
-            double divi = num1 / num2;
-            printf("A divisão é %.1f\n\n", divi);
-            break;
-        }
-        if(operador == 4){
-            double multi = num1 * num2;
-            printf("A multiplicação é %.1f\n\n", multi);
-            break;
-        }
-           
+            printf("(c) pra continuar (n) para sair...\n\n");
+            scanf("%s", &sair);
     }
 }
