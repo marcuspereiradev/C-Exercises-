@@ -12,35 +12,29 @@ int main(){
     scanf("%d", &quantidadeColuna);
     printf("\n\n");
     
-    for(int i = 1; i <= quantidadeColuna; i++){
-        
-        printf("%c ", conteudo);
-        
-     }
+    for(int i = 1; i <= quantidadeLinha; i++){
     
-    printf("\n");
-    
-    for (int j = 1; j <= 2; j++){
-        for(int i = 1; i <= quantidadeColuna; i++){
+        if(i == 1 || i == quantidadeLinha){
+            for(int j = 1; j <= quantidadeColuna; j++){
 
-            if(i == 1 || i == quantidadeColuna){
-                printf("%c ", conteudo);
-            }else{
-                printf("  ");
+            printf("%c ", conteudo);
+
+        
             }
-
+            
+            
+        }else{
+            for(int j = 1; j <= quantidadeColuna; j++){
+                if(j == 1 || j == quantidadeColuna){
+                    printf("%c ", conteudo);
+                }else{
+                    printf("  ");
+                }
+            }
         }
         
-    printf("\n");
+        printf("\n");
+        
     }
-    
-    
-    for(int i = 1; i <= quantidadeColuna; i++){
-        
-        printf("%c ", conteudo);
-        
-     }
-    
-    printf("\n\n");
     
 }
